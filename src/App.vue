@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    
     <router-view/>
   </div>
 </template>
-
+<script>
+import url from "./config/uri"
+export default {
+  async created () {
+    let ret = await this.$https.get(url.getCity)
+    console.log(ret)
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
