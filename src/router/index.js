@@ -4,9 +4,9 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import filmrouter from "@/router/routers/films"
-import cinrouter from "@/router/routers/cinms"
-import cenrouter from "@/router/routers/center"
+import filmrouter from "./routers/fims"
+import cinrouter from "./routers/cinms"
+import cenrouter from "./routers/center"
 
 const routes = [
   filmrouter,
