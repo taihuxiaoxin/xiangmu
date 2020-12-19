@@ -1,16 +1,23 @@
 <template>
   <div id="app">
     <router-view/>
+    <Footer />
   </div>
 </template>
 <script>
-import url from "./config/uri"
+import Footer from "./components/nav/footer"
 export default {
-  async created () {
-    let ret = await this.$https.get(url.getCity)
-    console.log(ret)
+  components: {
+    Footer,
   }
 }
+// import url from "./config/uri"
+// export default {
+//   async created () {
+//     let ret = await this.$https.get(url.getCity)
+//     console.log(ret)
+//   }
+// }
 </script>
 <style lang="scss">
 #app {
