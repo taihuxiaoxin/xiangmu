@@ -9,10 +9,10 @@ import cinrouter from "./routers/cinms"
 import cenrouter from "./routers/center"
 
 const routes = [
-  filmrouter,
+  ...filmrouter,
   cinrouter,
   cenrouter,
-  {path:'/',redirect: "/film"}
+  {path:'/',redirect: "/films"}
 ]
 
 const router = new VueRouter({
