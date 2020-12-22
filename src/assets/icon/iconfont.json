@@ -1,0 +1,30 @@
+{
+  "id": "2279617",
+  "name": "卖座",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1473243",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "8922379",
+      "name": "电影院",
+      "font_class": "dianyingyuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "13876768",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}
