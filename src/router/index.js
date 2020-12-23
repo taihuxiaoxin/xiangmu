@@ -7,16 +7,18 @@ Vue.use(VueRouter)
 import filmrouter from "./routers/fims"
 import cinrouter from "./routers/cinms"
 import cenrouter from "./routers/center"
+import cityfilm from "./routers/city"
 
 const routes = [
   ...filmrouter,
   cinrouter,
-  cenrouter,
+  ...cenrouter,
+  cityfilm,
   {path:'/',redirect: "/films"}
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })

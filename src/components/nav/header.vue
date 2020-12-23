@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .fix{
   position: fixed;
-  top: 0;
+  top: 30px;
   width: 100%;
   z-index: 1;
 }

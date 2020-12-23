@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isshow:true,
-    activeName:0
+    activeName:0,
+    city:{cityId: 110100,
+      cityName: "北京",}
   },
   mutations: {
     show:function(state,val){
@@ -14,6 +16,9 @@ export default new Vuex.Store({
     },
     setac:function(state,val){
       state.activeName = val
+    },
+    setcity:function(state,val){
+      state.city = val
     }
   },
   actions: {
