@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     getdata: function (cb = null) {
-      this.$https.get(url.getNew + `?pageNum=${this.page}`).then((ret) => {
+      this.$https.get(url.getNew + `?pageNum=${this.page}&cityId=${this.$store.state.city.cityId}`).then((ret) => {
         if (this.page <= Math.ceil(ret.data.total / 10)) {
           this.page++;
           this.list = [...ret.data.films, ...this.list];
