@@ -8,7 +8,8 @@ export default new Vuex.Store({
     isshow:true,
     activeName:0,
     city:{cityId: 110100,
-      cityName: "北京",}
+      cityName: "北京",},
+    jwt:""
   },
   mutations: {
     show:function(state,val){
@@ -19,6 +20,10 @@ export default new Vuex.Store({
     },
     setcity:function(state,val){
       state.city = val
+    },
+    setjwt:function(state,val){
+      state.jwt = val
+      window.localStorage.setItem("jwt",val)
     }
   },
   actions: {

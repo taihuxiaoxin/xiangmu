@@ -40,5 +40,14 @@ export default {
       this.$router.push(this.url[index]);
     },
   },
+  watch: {
+    $route:function(val){
+      if(val.fullPath =="/films/newpaw" ||val.fullPath =="/films/comming" ){
+        this.active = 0
+      }else{
+        this.active = this.url.indexOf(val.fullPath)
+      }
+    }
+  }
 };
 </script>
