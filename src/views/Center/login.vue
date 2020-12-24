@@ -10,8 +10,8 @@
     <van-field
       v-model="password"
       type="password"
-      name="密码"
-      label="密码"
+      name="password"
+      label="password"
       placeholder="密码"
       :rules="[{ required: true, message: '请填写密码' }]"
     />
@@ -22,14 +22,36 @@
 </template>
 <script>
 import Vue from "vue";
-import { Form } from "vant";
+import { Form, Toast,Button,Field } from "vant";
 
 Vue.use(Form);
+Vue.use(Toast);
+Vue.use(Button);
+Vue.use(Field);
 export default {
-  data(){
+  data() {
     return {
-      pattern:/^1[3-9]\d{9}$/
-    }
-  }
+      mobile: "",
+      password: "",
+      pattern: /^1[3-9]\d{9}$/,
+    };
+  },
+  methods: {
+    onSubmit(values) {
+      console.log(values)
+      this.$https.post("/v1/login", values).then((ret) => {
+        if (ret.code == 0) {
+          Toast.success(ret.msg);
+          console.log(ret)
+          this.$store.commit("setjwt",ret.jtw)
+          setTimeout(()=>{
+            this.$router.go(-1)
+          },2000)
+        } else {
+          Toast.fail(ret.msg);
+        }
+      });
+    },
+  },
 };
 </script>

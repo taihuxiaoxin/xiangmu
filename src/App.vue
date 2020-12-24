@@ -10,6 +10,12 @@ export default {
   components: {
     Footer,
   },
+  created () {
+    let t = window.localStorage.getItem("jwt")
+    if(t){
+      this.$store.commit("setjwt",t)
+    }
+  },
   updated () {
     let x = this.$route.path ==="/films/newpaw" ? "0" : "1";
     this.$store.commit("setac",x)
